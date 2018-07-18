@@ -25,6 +25,8 @@
  * @since Twenty Sixteen 1.0
  */
 
+require_once("widget-related-post.php");
+
 /**
  * Twenty Sixteen only works in WordPress 4.4 or later.
  */
@@ -87,7 +89,7 @@ function twentysixteen_setup() {
 	add_image_size('product_list_home', 250, 187, true);
 	add_image_size('product_archive', 267, 200, true);
 	add_image_size('post_archive', 820, 460, true);
-	add_image_size('post_sidebar', 341, 192, true);
+	add_image_size('post_sidebar', 355, 209, true);
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -157,9 +159,9 @@ add_action( 'after_setup_theme', 'twentysixteen_content_width', 0 );
  *
  * @since Twenty Sixteen 1.0
  */
-/*function twentysixteen_widgets_init() {
+function twentysixteen_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'twentysixteen' ),
+		'name'          => __( 'Sidebar Default', 'twentysixteen' ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentysixteen' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -169,7 +171,7 @@ add_action( 'after_setup_theme', 'twentysixteen_content_width', 0 );
 	) );
 
 }
-add_action( 'widgets_init', 'twentysixteen_widgets_init' );*/
+add_action( 'widgets_init', 'twentysixteen_widgets_init' );
 
 if ( ! function_exists( 'twentysixteen_fonts_url' ) ) :
 /**
@@ -231,7 +233,7 @@ add_action( 'wp_head', 'twentysixteen_javascript_detection', 0 );
  */
 function twentysixteen_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'twentysixteen-fonts', twentysixteen_fonts_url(), array(), null );
+	//wp_enqueue_style( 'twentysixteen-fonts', twentysixteen_fonts_url(), array(), null );
 
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
@@ -847,8 +849,8 @@ function my_custom_sidebars() {
         register_sidebar(array(
           'name' => $sidebar,
           'id' => sanitize_title($sidebar),
-          'before_title' => '<h1>',
-          'after_title' => '</h1>'
+          'before_title' => '<h3>',
+          'after_title' => '</h3>'
         ));
     }
   }
@@ -882,7 +884,7 @@ function my_custom_sidebars_page_print() {
     <?php
     wp_nonce_field('my_custom_sidebars', 'my_custom_sidebars_nonce');
     $saved = get_option('my_theme_sidebars');
-    for ($i=0; $i<4; $i++) {
+    for ($i=0; $i<3; $i++) {
       $value = isset( $saved[$i] ) ? esc_attr($saved[$i]) : '';
     ?>
     <input type="text" name="custom_sidebars[]" value="<?php echo $value;?>" />

@@ -8,17 +8,9 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
-	<div class="col-sm-12 col-md-3 col-lg-3">
-		<aside id="secondary" class="sidebar widget-area" role="complementary">
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-		</aside><!-- .sidebar .widget-area -->
-	</div>
-<?php endif; ?>
-
 <?php
 // change the following according to your defaults sidebar if exists
-$sidebar = 'main_sidebar'; 
+$sidebar = 'sidebar-1'; 
 // if in singular post/page check for saved custom sidebar
 if ( is_singular() ) {
   $id = get_queried_object_id(); // get current post/page id
@@ -29,5 +21,9 @@ if ( is_active_sidebar( $sidebar ) ) {
 ?>
 	<div id="widget" class="col-sm-12 col-md-3 col-lg-3">
 		<?php dynamic_sidebar( $sidebar ); ?>
+	</div>
+<?php } else { ?>
+	<div id="widget" class="col-sm-12 col-md-3 col-lg-3">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>
 <?php } ?>

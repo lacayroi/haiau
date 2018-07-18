@@ -8,6 +8,128 @@
  */
 ?>
 
+<?php
+
+	$categories = get_the_category();
+
+	foreach($categories as $cat) {
+		$cate = $cat->slug;
+	}
+	
+	if (( $cate == 'may-lam-kem-tuoi-hai-au' ) || ( $cate == 'may-lam-da-hai-au' )  || ( $cate == 'may-dun-nuoc-nong' )  || ( $cate == 'may-lam-da-vay' ) || ( $cate == 'may-hut-bui' )) {
+?>
+
+	<div itemprop="publisher" itemtype="http://schema.org/Product" id="content" class='product-detail'> 
+		
+		<?php custom_breadcrumbs(); ?>         
+		
+		<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+			<?php if (has_post_thumbnail( $post->ID ) ): ?>
+			  <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+				<img src="<?php echo $image[0]; ?>">
+			<?php endif; ?>
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 product-infor">
+			<div id="brc_muntil" class="clearfix hidden-xs">
+				<div class="tax_parent"> <?php the_category(', '); ?></div>
+			</div>
+			<h1 itemprop="name" class="entry-title"><?php the_title(); ?></h1>
+			<div class="row">	
+				<div class="col-lg-6 col-md-6 col-sm-6 product-infor-left">
+					<div id="product-infor"> 
+						<span class="product-infor-title">Thương hiệu: </span>
+						<span itemprop="brand" itemscope="" itemtype="http://schema.org/Brand">
+							<span itemprop="name" class="thuong-hieu-content">Hải Âu</span>
+						</span>
+						<div id="single-product-current_price"> 
+							<span class="product-infor-title">Giá tại Hải Âu: </span>
+							<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="single-product-current_price">
+								<span itemprop="price" content="<?php the_field('gia'); ?>"><?php the_field('gia'); ?> </span><span class="ti-gia" itemprop="priceCurrency" content="VNĐ">VNĐ</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 product-infor-right">
+					<ul>
+						<li> <a class="chatfb" target="_blank" href="https://m.me/haiaucom/" title="Gửi tin nhắn cho Hải Âu trên Facebook">Chat với Hải Âu</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row description ">
+				<div class="description-title">
+					<p>Thông tin &amp; Khuyến mãi</p>
+				</div>
+				<div id="product-description" itemprop="description">
+					<?php the_field('motangan'); ?>
+				</div>
+			</div>
+		</div>
+ 
+		<div id="single-product-content" class="clearfix">
+			<div class="entry entry-content clearboth">
+					<?php if(get_option('hires_integrate_singletop_enable') == 'on') echo (get_option('hires_integration_single_top')); ?>
+					
+					<?php the_content(); ?>
+
+					<?php if(get_option('hires_integrate_singlebottom_enable') == 'on') echo (get_option('hires_integration_single_bottom')); ?>
+
+			</div> <!--end .entry-->   
+			
+			<div class="clear"></div>
+
+		</div>
+		
+		<div class="related-content clearfix">
+			<div class="related-content-heading">
+				<p>Sản phẩm liên quan</p>
+			</div>
+			<div class="row">
+				<?php
+					$categories = get_the_category($post->ID);
+					if ($categories) 
+					{
+						$category_ids = array();
+						foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+				 
+						$args=array(
+							'category__in' 		=> 	$category_ids,
+							'post__not_in' 		=> 	array($post->ID),
+							'showposts'			=>	4,
+							'caller_get_posts'	=>	1
+						);
+						$my_query = new wp_query($args);
+						if( $my_query->have_posts() ) 
+						{
+							while ($my_query->have_posts())
+							{
+								$my_query->the_post();
+								?>
+								
+								<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-related col-tag div2-clear-both">
+									<div class="img-box">
+										<a href="<?php the_permalink(); ?>">
+											<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'related-product' ); ?>
+												<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+										</a>
+									</div>
+									<div class="title-box"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+								</div>
+								
+								<?php
+							}
+						}
+					}
+					wp_reset_query();
+				?>
+			</div>
+		</div>
+		
+	</div>
+
+<?php
+} else {
+?>
+
 <div itemprop="publisher" itemtype="http://schema.org/Article" id="content"> 
 	
 	<?php custom_breadcrumbs(); ?>         
@@ -89,3 +211,7 @@
 	<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5" data-width="auto"></div>
 	
 </div>
+
+<?php
+}
+?>

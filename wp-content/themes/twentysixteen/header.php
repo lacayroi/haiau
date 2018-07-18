@@ -55,6 +55,7 @@
 					</div>
 				</div>
 			</div><!-- #wraphead clr -->
+			
 			<div id="main-navigation">
 				<div class="container-fluid">
 					<div class="row">
@@ -82,7 +83,7 @@
 										<span class="icon-bar"></span>
 										<span class="icon-bar"></span>
 									</button>
-									<a class="navbar-brand hidden-lg hidden-md" href="#">HaiAu Group</a>
+									<a class="navbar-brand hidden-lg hidden-md" href="<?php echo get_site_url(); ?>"><img class="logo" src="https://haiau.com/wp-content/themes/shop/images/haiau-logo.png" alt="logo hải âu group"></a>
 								</div>
 								<div class="collapse navbar-collapse" id="myNavbar">
 									<?php
@@ -99,12 +100,83 @@
 					</div>
 				</div>
 			</div><!-- #main-navigation -->
+			
+			<!-- mobile search -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12 col-xs-12 hidden-lg hidden-md">
+						<div id="mobile-search" class="clearfix">
+							<form action="<?php echo esc_url( home_url( '/' ) ); ?>" class="frm-searchform" method="get">
+								<div> 
+									<input type="text" class="s" name="s" value="" placeholder="Nhập tên sản phẩm cần tìm kiếm..."> 
+									<button>
+										<i class="fa fa-search" aria-hidden="true"></i>Search
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</header><!-- .site-header -->
 		
+		<?php
+			$current_url = 'http://'.$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+			if (( $current_url == 'http://dienmayhaiau.com/en/may-lam-da-hai-au/' ) || ( $current_url == 'http://dienmayhaiau.com/en/may-lam-kem-tuoi-hai-au/' )  || ( $current_url == 'http://dienmayhaiau.com/en/may-dun-nuoc-nong/' )  || ( $current_url == 'http://dienmayhaiau.com/en/may-lam-da-vay/' ) || ( $current_url == 'http://dienmayhaiau.com/en/may-hut-bui/' ) || is_home() ) {
+		?>
 		<div id="slide">
 			<div class="container-fluid">
 				<div class="row">
+					<?php if( !is_home() ) { ?>
+						<div class="col-lg-2 col-md-2 pull-left">
+							<aside class="homenews">
+								<figure><h2><a href="/tin-tuc">Cẩm nang hay - Video</a></h2></figure>
+								<?php 
+									$r = new WP_Query( array(
+									'posts_per_page'      => 3,
+									'category_name'       => 'tin-tuc',
+									'no_found_rows'       => true,
+									'post_status'         => 'publish',
+									'ignore_sticky_posts' => true
+								) );
+								if ($r->have_posts()) :
+								?>
+								<ul>
+									<?php while ( $r->have_posts() ) : $r->the_post(); ?>
+									<li>
+										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">							
+											<h3><?php the_title(); ?></h3>
+										</a>
+									</li>
+									<?php endwhile; ?>
+								</ul>
+								<?php endif; ?>
+								<div class="wigdet-info">
+									<div class="banner">
+										<div class="banner-item-t">
+											<a href="<?php echo get_site_url(); ?>/cam-nang/" target="_blank">
+												<div class="banner-item icon-on-left green">
+													<h4>Cẩm nang</h4>
+													<i class="fa fa-picture-o" aria-hidden="true"></i>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="banner">
+										<div class="banner-item-t">
+											<a href="<?php echo get_site_url(); ?>/tag/bao-chi-noi-ve-hai-au/" target="_blank">
+												<div class="banner-item icon-on-left red">
+													<h4>Báo chí nói về chúng tôi</h4>
+													<i class="fa fa-newspaper-o"></i>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</aside>
+						</div>
+					<?php } ?>
 					<div class="col-lg-5 col-md-5 pull-right qc1">
 						<div class="qc-1">
 							<a href="https://haiau.com/may-lam-da-hai-au/"><img class="img-responsive img-qc-top" src="https://haiau.com/wp-content/themes/shop/images/slider/banner-home-right-1.jpg" alt="Giới thiệu Hải Âu Việt Nam"></a>
@@ -120,6 +192,7 @@
 			</div>
 			<div class="clr"></div>
 		</div><!-- #slide -->
+		<?php } ?>
 
 		<div id="content" class="site-content">
 			<div class="container-fluid">

@@ -4856,7 +4856,7 @@ ul.products li .title-box a:hover {
     color: #0060af !important;
     display: block;
     font-size: 14px !important;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 .entry-content ul.list-prev-post {
     display: block;
@@ -5143,6 +5143,381 @@ i.fa.fa-phone.fa-4x.cate {
 	background-color: #c77ba4;
     border-bottom: 1px solid #ba5a8e;
 }
+.homenews {
+    height: 400px;
+    overflow: hidden;
+}
+.homenews figure {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    line-height: 42px;
+	margin: 0;
+}
+.homenews h2 {
+    float: left;
+    background: #fff;
+    line-height: 1.3em;
+    margin-left: 8px;
+    margin-bottom: 0 !important;
+}
+.homenews h2 a {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #4a90e2;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 40px;
+}
+.homenews h2 a:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid #4a90e2;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+    margin-left: 5px;
+}
+.homenews ul {
+    display: block;
+    overflow: hidden;
+    height: 180px;
+	margin: 0;
+	padding: 0;
+}
+.homenews li {
+    margin-bottom: 0 !important;
+    display: block;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ededed;
+    background: #fff;
+	list-style: none;
+}
+.homenews li a {
+    display: block;
+    overflow: hidden;
+    height: 45px;
+}
+.homenews li h3 {
+    display: inline;
+    overflow: hidden;
+    line-height: 1.4em;
+    font-size: 14px !important;
+    color: #333 !important;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal !important;
+}
+.wigdet-info .banner {
+    overflow: hidden;
+    margin-bottom: 7px;
+}
+.wigdet-info a {
+    color: #fff !important;
+}
+.wigdet-info .banner-item.icon-on-left {
+    padding-left: 80px;
+    padding-bottom: 20px;
+}
+.wigdet-info .banner-item.green {
+    background: #2ecc71;
+}
+.wigdet-info a .banner-item {
+    color: #fff !important;
+}
+.wigdet-info .banner-item {
+    padding: 10px 15px;
+    position: relative;
+    transition: background .3s;
+    -webkit-transition: background .3s;
+    -moz-transition: background .3s;
+    -ms-transition: background .3s;
+    -o-transition: background .3s;
+}
+.wigdet-info .banner-item h4 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff !important;
+    padding-top: 10px !important;
+}
+.wigdet-info .banner-item.icon-on-left .fa {
+    position: absolute;
+    top: 10px;
+    z-index: 100;
+    left: 10px;
+}
+.wigdet-info .banner-item .fa {
+    font-size: 42px !important;
+}
+.wigdet-info .banner-item.red {
+    background: #ee3124;
+}
+.wigdet-info .banner-item.icon-on-left .fa-newspaper-o {
+    padding-top: 13px !important;
+}
+#slide .col-lg-2.col-md-2 {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.homenews li:hover h3 {
+    color: #288ad6;
+}
+.widget {
+    margin-bottom: 20px;
+    clear: both;
+    overflow: hidden;
+}
+.widget .widget-title {
+    border-bottom: 1px solid #e4e4e4;
+    color: #0095da;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 15px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+}
+.widget .widget-title span {
+    border-bottom: 1px solid #db2c2c;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.widget.popular ul li {
+    border-bottom: 1px dotted #eee;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+	list-style: none;
+}
+#sidebar li {
+    margin-bottom: 0;
+}
+#sidebar a {
+    color: #444;
+    font-size: 13px;
+}
+.widget li.first a {
+    font-weight: 700;
+}
+.widget.popular ul {
+	margin: 0;
+	padding: 0;
+}
+.widget.popular ul li img {
+    border: medium none;
+    margin-top: 19px;
+    width: 100%;
+    max-height: 209px;
+}
+.widget ul li h4 {
+    font-size: 14px;
+    font-weight: 400 !important;
+    margin: 0 !important;
+}
+.entry-title>a {
+    color: #0060af !important;
+    display: block;
+    font-size: 14px !important;
+    margin-top: 0px;
+}
+.widget.popular ul li {
+    border-bottom: 1px dotted #eee;
+    margin-bottom: 0px !important;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.widget li.last {
+    background: url(//haiau.com/wp-content/themes/shop/images/bg_dot_gray_3x3.gif) no-repeat left 23px;
+    padding: 5px 0 0 10px;
+}
+.widget li.last h4 {
+    display: block;
+}
+.entry-title>a {
+    color: #0060af !important;
+    display: block;
+    font-size: 14px !important;
+    margin-top: 0px;
+}
+.navbar-brand .logo {
+    padding-top: 10px;
+    width: 129px;
+}
+.search-results .featured-img img {
+	width: 431px;
+	height: 323px;
+}
+.product-infor #brc_muntil {
+    background: #ecedee none repeat scroll 0 0;
+    padding: 0;
+    width: 100%;
+}
+.single-product .tax_parent {
+    margin-left: 0;
+}
+.tax_parent {
+    float: left;
+    position: relative;
+}
+.tax_parent>a {
+    color: #333;
+    font-size: 12px;
+}
+.product-infor h1 {
+    clear: both;
+    color: #333;
+    display: block;
+    float: left;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 25px;
+    margin-top: 5px;
+}
+.product-infor-left>div {
+    border-right: 1px solid #eee;
+}
+.product-infor-title {
+    color: #666;
+    font-size: 12px;
+    float: left;
+    margin-right: 4px;
+    clear: both;
+}
+.thuong-hieu-content {
+    color: #00b6f0;
+}
+#single-product-current_price {
+    clear: both;
+}
+.product-infor-title {
+    color: #666;
+    font-size: 12px;
+    float: left;
+    margin-right: 4px;
+    clear: both;
+}
+.single-product-current_price {
+    color: green;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.1;
+}
+.product-infor-right ul {
+	margin: 0;
+	padding: 0;
+}
+.product-infor-right li {
+    font-size: 13px;
+	list-style: none;
+}
+.product-infor-right li::before {
+    content: url(//haiau.com/wp-content/themes/shop/images/item-li2.png);
+    margin-right: 10px;
+}
+.chatfb {
+    background: #f5f5f5 url(https://haiau.com/wp-content/uploads/2018/05/MessengerIcon.png) 5px center no-repeat;
+    padding: 3px 15px;
+    color: #323232 !important;
+    border-radius: 3px;
+    padding-left: 40px;
+    display: inline-block;
+}
+.row.description {
+    margin-top: 12px;
+}
+.product-infor>.row {
+    clear: both;
+}
+.description-title {
+    border-bottom: 1px solid #e7e7e7;
+    height: 18px;
+    margin-bottom: 14px;
+}
+.description-title>p {
+    background: white none repeat scroll 0 0 !important;
+    color: #444 !important;
+    display: block !important;
+    float: left;
+    font-family: Verdana;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    padding: 0 5px;
+}
+#product-description {
+    padding: 0 19px;
+    clear: both;
+	margin: 0;
+}
+ol {
+    counter-reset: de-muc;
+    list-style-type: none;
+}
+#product-description li {
+    list-style: none;
+    font-size: 13px;
+}
+#product-description li::before {
+    content: url(//haiau.com/wp-content/themes/shop/images/item-li.png);
+    margin-right: 10px;
+}
+.product-detail .col-lg-5.col-md-5.col-sm-5.col-xs-12,
+.product-detail .col-lg-7.col-md-7.col-sm-7.col-xs-12.product-infor {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.product-infor .product-infor-left,
+.product-infor .product-infor-right {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+#product-description ul,
+#product-description ol {
+	margin: 0;
+}
+.related-content {
+    margin-top: 20px;
+}
+.related-content-heading {
+    background: url(images/bg_head_nav.png) repeat-x scroll 0 10px rgba(0,0,0,0);
+    margin-bottom: 10px;
+}
+.related-content-heading>p {
+    background: none repeat scroll 0 0 #fff;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding-right: 15px;
+    text-transform: uppercase;
+    color: orange;
+}
+.related-content .col-related {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.related-content .title-box {
+    background: #ababab;
+    color: #fff;
+    margin-bottom: 10px;
+	margin-top: 5px;
+    position: relative;
+	font-size: 13px;
+	padding: 5px;
+}
+.related-content .title-box a {
+    color: #fff;
+}
+#mobile-search {
+    margin-top: 5px;
+	margin-bottom: 5px;
+}
+#mobile-search .s {
+    width: 79%;
+    border: 1px solid #ff9249;
+    border-radius: 5px;
+	padding: 6px !important;
+}
 @media (min-width: 768px) {
 	.frm-searchform button {
 		background: #ff7a10;
@@ -5217,6 +5592,34 @@ i.fa.fa-phone.fa-4x.cate {
 	.listcat .catbox-content-large p.current_price {
 		padding: 0 5px;
 	}
+	.navbar-brand logo {
+    	width: 133px;
+	}
+	.category .product .item-box {
+    	padding: 5px !important;
+    	width: 50%;
+	}
+	.frm-searchform button {
+    	background: #ff7a10;
+    	padding: 6px 5px;
+    	text-shadow: none;
+    	border: 0;
+    	margin-left: -5px;
+    	height: 37px;
+    	color: #fff;
+    	-webkit-border-top-right-radius: 5px;
+    	-webkit-border-bottom-right-radius: 5px;
+    	-moz-border-radius-topright: 5px;
+    	-moz-border-radius-bottomright: 5px;
+    	border-top-right-radius: 5px;
+    	border-bottom-right-radius: 5px;
+		width: 21%;
+	}
+	.frm-searchform i.fa-search {
+    	font-size: 13px !important;
+    	padding-right: 3px;
+    	font-weight: 100;
+	}
 }
 @media (max-width: 319px) and (min-width: 240px) {
 	#footer-add-haiau>div {
@@ -5257,6 +5660,24 @@ i.fa.fa-phone.fa-4x.cate {
 		float: none !important;
 		width: 100%;
 		max-width: 100%;
+	}
+	.navbar-header .navbar-brand {
+		padding: 0 0 0 15px !important;
+	}
+	ul.products li {
+    	margin-bottom: 5px;
+    	list-style: none;
+    	padding: 0 2px;
+	}
+	.mainmenu .navbar {
+		margin-top: 10px;
+	}
+	.dk-bct {
+    	position: relative;
+    	/* left: 50px; */
+    	/* top: 0; */
+   	 	display: block;
+    	margin: 0 auto;
 	}
 }
 @media (max-width: 480px) {
