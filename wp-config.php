@@ -21,13 +21,13 @@ define( 'WP_POST_REVISIONS', false );
 
 // ** Thiết lập MySQL - Bạn có thể lấy các thông tin này từ host/server ** //
 /** Tên database MySQL */
-define('DB_NAME', 'ten_database');
+define('DB_NAME', 'haiau');
 
 /** Username của database */
-define('DB_USER', 'username');
+define('DB_USER', 'root');
 
 /** Mật khẩu của database */
-define('DB_PASSWORD', 'mat_khau');
+define('DB_PASSWORD', '');
 
 /** Hostname của database */
 define('DB_HOST', 'localhost');
